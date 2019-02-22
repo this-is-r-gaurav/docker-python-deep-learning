@@ -8,13 +8,7 @@
                   | |                                           __/ |
                   |_|                                          |___/
 ```
-[![Docker Hub](http://dockeri.co/image/petronetto/docker-python-deep-learning)](https://registry.hub.docker.com/u/petronetto/docker-python-deep-learning/ "petronetto/docker-python-deep-learning")
 
-[![Size and Layers](https://images.microbadger.com/badges/image/petronetto/docker-python-deep-learning.svg)](https://microbadger.com/images/petronetto/docker-python-deep-learning "Get your own image badge on microbadger.com")
-[![GitHub issues](https://img.shields.io/github/issues/petronetto/docker-python-deep-learning.svg)](https://github.com/petronetto/docker-python-deep-learning/issues)
-[![GitHub license](https://img.shields.io/github/license/petronetto/docker-python-deep-learning.svg)](https://raw.githubusercontent.com/petronetto/docker-python-deep-learning/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/petronetto/docker-python-deep-learning.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fpetronetto%2Fdocker-python-deep-learning)
-[![CircleCI](https://circleci.com/gh/petronetto/docker-python-deep-learning/tree/master.svg?style=svg)](https://circleci.com/gh/petronetto/docker-python-deep-learning/tree/master)
 
 ## What is include
 - Python 3.6
@@ -32,19 +26,28 @@
 - MXNet
 - Jupyter Notebook
 
+To work with this personal branch, You just first need to clone the Repo. 
+```sh
+
+~$ git clone -b personal https://github.com/this-is-r-gaurav/docker-python-deep-learning.git
+~$ cd docker-python-deep-learning
+~/docker-python-deep-learning$
+```
+
+## Building the Image
+Replace Image_name name with name of your choice(No space allowed) : 
+```sh
+~/docker-python-deep-learning$docker build -t Image_name
+```
+
 ## Running the container
+**host_path**: Replace the host_path with the path you want to mount volume in if you want to to mount volume in home directory within a pynb directory then host_path with ~/pynb
+
+**Image_name**: Replace Image_name with the name you give it while building the Image
 
 ```sh
 docker run -it --name deep-learning \
-           -v $(PWD):/home/notebooks \
+           -v host_path:/home/notebooks \
            -p 8888:8888 -d \
-           petronetto/docker-python-deep-learning
+           Image_name
 ```
-
-
-Enjoy :)
-
-License: [BSD 3-Clause](LICENSE)
-
-
-<a href='https://ko-fi.com/N4N09BMZ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
