@@ -35,7 +35,7 @@ To work with this personal branch, You just first need to clone the Repo.
 ```
 
 ## Building the Image
-Replace Image_name name with name of your choice(No space allowed) : 
+**Image_name**: Replace Image_name name with name of your choice(No space allowed) : 
 ```sh
 ~/docker-python-deep-learning$docker build -t Image_name
 ```
